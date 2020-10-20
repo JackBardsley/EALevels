@@ -5,11 +5,14 @@ import csv
 import json
 import sys
 
+# read from stdin
 data = json.loads(sys.stdin.read())
 stations = data['items']
 
+# station table cols
 cols = ['RLOIid','catchmentName','dateOpened','easting','label','lat','long','northing','notation','riverName','stationReference','town','wiskiID']
 
+# write to stdout
 writer = csv.writer(sys.stdout)
 writer.writerow(cols)
 for row in stations:
